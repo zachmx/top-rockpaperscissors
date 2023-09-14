@@ -18,13 +18,53 @@ function playerChoice() {
 
 function playRound(playerChoice, computerChoice) {
 
-    if (playerChoice == 'rock' && computerChoice == 'paper'){
-        alert("Computer picked Paper, You Lost!");
-    } else if (playerChoice == 'rock' && computerChoice == "scissors") {
-        alert ("Computer picked Scissors.  You win!");
-    } else if (playerChoice == 'rock' && computerChoice == 'rock') {
-        alert("Computer picked Rock.  You tied!");
-    }
-}
+        if (playerChoice == 'rock') {
+                switch (computerChoice){
+                    case 'paper':
+                        alert("Computer picked Paper, You Lost");
+                        break;
+                    case 'scissors':
+                        alert("Computer picked Scissors.  You Win!");
+                        break;
+                    case "rock": 
+                        alert("Computer picked Rock. You tied!");
+                        } 
+            } else if (playerChoice == "paper") {
+                switch (computerChoice){
+                    case 'scissors':
+                        alert("Computer picked Scissors, You Lost");
+                        break;
+                    case 'rock':
+                        alert("Computer picked Rock.  You Win!");
+                        break;
+                    case "paper": 
+                        alert("Computer picked Paper. You tied!");
+                        } 
+            } else if (playerChoice == "scissors"){
+                switch (computerChoice){
+                    case 'Rock':
+                        alert("Computer picked Rock, You Lost");
+                        break;
+                    case 'scissors':
+                        alert("Computer picked Scissors.  You tied!");
+                        break;
+                    case "paper": 
+                        alert("Computer picked Paper. You Win!");
+                        }
+            } else {
+                alert("Not sure that's an appropriate choice for Rock, Paper, Scissors")
+            }
+} 
 
-playRound(playerChoice(), computerChoice(1, 4));
+playRound(playerChoice(), computerChoice(1, 4))   ;
+
+
+
+/** && computerChoice == 'paper'){
+    alert("Computer picked Paper, You Lost!");
+} else if (playerChoice == 'rock' && computerChoice == "scissors") {
+    alert ("Computer picked Scissors.  You win!");
+} else if (playerChoice == 'rock' && computerChoice == 'rock') {
+    alert("Computer picked Rock.  You tied!");
+}
+**/ 
