@@ -21,42 +21,86 @@ function playRound(playerChoice, computerChoice) {
         if (playerChoice == 'rock') {
                 switch (computerChoice){
                     case 'paper':
-                        alert("Computer picked Paper, You Lost");
+                        return "loss"
                         break;
                     case 'scissors':
-                        alert("Computer picked Scissors.  You Win!");
+                        return "win"
                         break;
                     case "rock": 
-                        alert("Computer picked Rock. You tied!");
+                        return "tie"
                         } 
             } else if (playerChoice == "paper") {
                 switch (computerChoice){
                     case 'scissors':
-                        alert("Computer picked Scissors, You Lost");
+                        return "loss"
                         break;
                     case 'rock':
-                        alert("Computer picked Rock.  You Win!");
+                        return "win"
                         break;
                     case "paper": 
-                        alert("Computer picked Paper. You tied!");
+                        return "tie"
                         } 
             } else if (playerChoice == "scissors"){
                 switch (computerChoice){
                     case 'Rock':
-                        alert("Computer picked Rock, You Lost");
+                        return "loss"
                         break;
                     case 'scissors':
-                        alert("Computer picked Scissors.  You tied!");
+                        return "tie"
                         break;
                     case "paper": 
-                        alert("Computer picked Paper. You Win!");
+                        return "win"
                         }
             } else {
                 alert("Not sure that's an appropriate choice for Rock, Paper, Scissors")
             }
 } 
 
-playRound(playerChoice(), computerChoice(1, 4))   ;
+function game() {
+
+    let playerWins = 0;
+    let computerWins = 0;
+    var gameOver = false;
+
+
+    while (gameOver == false) {
+
+
+        let matchResult = playRound(playerChoice(), computerChoice(1, 4));
+
+        if (matchResult == "win") {
+            console.log("You won this Round!")
+            playerWins++;
+        } else if (matchResult == "loss") {
+            console.log("The computer won this Round!")
+            computerWins++;
+        } else if (matchResult == "tie") {
+            console.log("You tied this Round!")
+        }
+
+        console.log("Player wins: " + playerWins);
+        console.log("Computer wins: " + computerWins);
+
+        if (playerWins == 5 || computerWins == 5) {
+
+            let winner; 
+
+            if (playerWins == 5) {
+                let winner = "Human player";
+                console.log("The Game is Over. The " + winner + " wins the game!!" )
+                var gameOver = true;
+            } else if (computerWins == 5) {
+                let winner = "Computer"
+                console.log("The Game is Over. The " + winner + " wins the game!!" )
+                var gameOver = true;
+
+            }
+        }
+    }
+}
+
+game();
+
 
 
 
