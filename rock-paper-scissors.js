@@ -1,41 +1,40 @@
 
+function computerChoice(min, max){
+
+    let choice = Math.floor(Math.random() * (max - min) + min)
+
+    return choice == 1 ? 'rock'
+        : choice == 2 ? 'paper'
+        : choice == 3 ? 'scissors'
+        : "It's Rock, Paper, Scissors... Pick One!";
+
+}
 
 const rock = document.querySelector('#rock');
 const paper = document.querySelector('#paper');
 const scissors = document.querySelector('#scissors');
 
-rock.addEventListener('click', (e)=> {
-    var playerChoice = 'paper';
-    console.log(playerChoice);
-    playRound()
 
+
+rock.addEventListener('click', (e)=> {
+    let playerChoice = 'rock';
+    console.log(playRound(playerChoice, computerChoice(1, 4)));
     } )
 
 paper.addEventListener('click', (e)=> {
-    var playerChoice = 'paper';
-    console.log(playerChoice);
-    playRound()
+    const playerChoice = 'paper';
+    console.log(playRound(playerChoice, computerChoice(1, 4)));
 
     } )
 
 scissors.addEventListener('click', (e)=> {
-    var playerChoice = 'scissors';
-    console.log(playerChoice);
-    playRound()
+    const playerChoice = 'scissors';
+    console.log(playRound(playerChoice, computerChoice(1, 4)));
     } )
 
 
 
-function computerChoice(min, max){
 
-        let choice = Math.floor(Math.random() * (max - min) + min)
-    
-        return choice == 1 ? 'rock'
-            : choice == 2 ? 'paper'
-            : choice == 3 ? 'scissors'
-            : "It's Rock, Paper, Scissors... Pick One!";
-    
-    }
 
 function playRound(playerChoice, computerChoice) {
 
