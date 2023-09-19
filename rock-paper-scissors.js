@@ -1,20 +1,41 @@
 
+
+const rock = document.querySelector('#rock');
+const paper = document.querySelector('#paper');
+const scissors = document.querySelector('#scissors');
+
+rock.addEventListener('click', (e)=> {
+    var playerChoice = 'paper';
+    console.log(playerChoice);
+    playRound()
+
+    } )
+
+paper.addEventListener('click', (e)=> {
+    var playerChoice = 'paper';
+    console.log(playerChoice);
+    playRound()
+
+    } )
+
+scissors.addEventListener('click', (e)=> {
+    var playerChoice = 'scissors';
+    console.log(playerChoice);
+    playRound()
+    } )
+
+
+
 function computerChoice(min, max){
 
-    let choice = Math.floor(Math.random() * (max - min) + min)
-
-    return choice == 1 ? 'rock'
-        : choice == 2 ? 'paper'
-        : choice == 3 ? 'scissors'
-        : "It's Rock, Paper, Scissors... Pick One!";
-
-}
-
-function playerChoice() {
-    let choice = prompt("Rock, Paper, or Scissors?", " ");
-    let choiceLower = choice.toLowerCase();
-    return choiceLower;
-}
+        let choice = Math.floor(Math.random() * (max - min) + min)
+    
+        return choice == 1 ? 'rock'
+            : choice == 2 ? 'paper'
+            : choice == 3 ? 'scissors'
+            : "It's Rock, Paper, Scissors... Pick One!";
+    
+    }
 
 function playRound(playerChoice, computerChoice) {
 
@@ -52,7 +73,7 @@ function playRound(playerChoice, computerChoice) {
                         return "win"
                         }
             } else {
-                alert("Not sure that's an appropriate choice for Rock, Paper, Scissors")
+                alert("Not sure that's an appropriate choice for Rock, Paper, Scissors");
             }
 } 
 
@@ -81,34 +102,26 @@ function game() {
         console.log("Player wins: " + playerWins);
         console.log("Computer wins: " + computerWins);
 
-        if (playerWins == 5 || computerWins == 5) {
-
-            let winner; 
-
-            if (playerWins == 5) {
-                let winner = "Human player";
-                console.log("The Game is Over. The " + winner + " wins the game!!" )
-                var gameOver = true;
-            } else if (computerWins == 5) {
-                let winner = "Computer"
-                console.log("The Game is Over. The " + winner + " wins the game!!" )
-                var gameOver = true;
-
-            }
-        }
+        //if (playerWins == 5 || computerWins == 5) {
+//
+        //    let winner; 
+//
+        //    if (playerWins == 5) {
+        //        let winner = "Human player";
+        //        console.log("The Game is Over. The " + winner + " wins the game!!" )
+        //        var gameOver = true;
+        //    } else if (computerWins == 5) {
+        //        let winner = "Computer"
+        //        console.log("The Game is Over. The " + winner + " wins the game!!" )
+        //        var gameOver = true;
+//
+        //    }
+        //}
     }
 }
 
-game();
 
 
 
 
-/** && computerChoice == 'paper'){
-    alert("Computer picked Paper, You Lost!");
-} else if (playerChoice == 'rock' && computerChoice == "scissors") {
-    alert ("Computer picked Scissors.  You win!");
-} else if (playerChoice == 'rock' && computerChoice == 'rock') {
-    alert("Computer picked Rock.  You tied!");
-}
-**/ 
+
