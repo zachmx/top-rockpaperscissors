@@ -6,35 +6,9 @@ function computerChoice(min, max){
     return choice == 1 ? 'rock'
         : choice == 2 ? 'paper'
         : choice == 3 ? 'scissors'
-        : "It's Rock, Paper, Scissors... Pick One!";
+        : "something broke lol";
 
 }
-
-const rock = document.querySelector('#rock');
-const paper = document.querySelector('#paper');
-const scissors = document.querySelector('#scissors');
-
-
-
-rock.addEventListener('click', (e)=> {
-    let playerChoice = 'rock';
-    console.log(playRound(playerChoice, computerChoice(1, 4)));
-    } )
-
-paper.addEventListener('click', (e)=> {
-    const playerChoice = 'paper';
-    console.log(playRound(playerChoice, computerChoice(1, 4)));
-
-    } )
-
-scissors.addEventListener('click', (e)=> {
-    const playerChoice = 'scissors';
-    console.log(playRound(playerChoice, computerChoice(1, 4)));
-    } )
-
-
-
-
 
 function playRound(playerChoice, computerChoice) {
 
@@ -76,51 +50,117 @@ function playRound(playerChoice, computerChoice) {
             }
 } 
 
-function game() {
-
-    let playerWins = 0;
-    let computerWins = 0;
-    var gameOver = false;
-
-
-    while (gameOver == false) {
-
-
-        let matchResult = playRound(playerChoice(), computerChoice(1, 4));
-
-        if (matchResult == "win") {
-            console.log("You won this Round!")
-            playerWins++;
-        } else if (matchResult == "loss") {
-            console.log("The computer won this Round!")
-            computerWins++;
-        } else if (matchResult == "tie") {
-            console.log("You tied this Round!")
-        }
-
-        console.log("Player wins: " + playerWins);
-        console.log("Computer wins: " + computerWins);
-
-        //if (playerWins == 5 || computerWins == 5) {
-//
-        //    let winner; 
-//
-        //    if (playerWins == 5) {
-        //        let winner = "Human player";
-        //        console.log("The Game is Over. The " + winner + " wins the game!!" )
-        //        var gameOver = true;
-        //    } else if (computerWins == 5) {
-        //        let winner = "Computer"
-        //        console.log("The Game is Over. The " + winner + " wins the game!!" )
-        //        var gameOver = true;
-//
-        //    }
-        //}
+function printResults(inputMatchResult) {
+    if (inputMatchResult == "win") {
+        console.log("You won this Round!")
+        playerWins++;
+    } else if (inputMatchResult == "loss") {
+        console.log("The computer won this Round!")
+        computerWins++;
+    } else if (inputMatchResult == "tie") {
+        console.log("You tied this Round!")
     }
+
+    console.log("Player wins: " + playerWins);
+    console.log("Computer wins: " + computerWins);
 }
 
+function createPlayerOptions(){
+
+    var playerWins = 0;
+    var computerWins = 0;
+    var gameOver = false;
+
+    const playersZone = document.getElementById('userchoice')
+
+    const rockBtn = document.createElement('button');
+    rockBtn.textContent = 'rock';
+    rockBtn.classList = 'player-button';
+    rockBtn.id ='rock';
+
+    const paperBtn = document.createElement('button');
+    paperBtn.textContent = 'paper';
+    paperBtn.classList = 'player-button';
+    paperBtn.id ='paper';
+
+    const scissorsBtn = document.createElement('button');
+    scissorsBtn.textContent = 'scissors';
+    scissorsBtn.classList = 'player-button';
+    scissorsBtn.id ='scissors';
+
+
+    startButton.remove();
+
+    playersZone.appendChild(rockBtn);
+    playersZone.appendChild(paperBtn);
+    playersZone.appendChild(scissorsBtn);
+
+    rockBtn.addEventListener('click', rockSelection = () => {
+
+        let playerChoice = 'rock';
+        let matchResult = (playRound(playerChoice, computerChoice(1, 4)));
+
+        printResults(matchResult);
+        
+    });
+
+    paperBtn.addEventListener('click', rockSelection = () => {
+        let playerChoice = 'paper';
+        console.log(playRound(playerChoice, computerChoice(1, 4)));
+    });
+
+    scissorsBtn.addEventListener('click', rockSelection = () => {
+        let playerChoice = 'scissors';
+        console.log(playRound(playerChoice, computerChoice(1, 4)));
+    });
+
+
+    
+}
+
+function createScoreBoard(){
+}
+function game() {
+
+    createPlayerOptions();
+
+    createScoreBoard();
 
 
 
+
+    //while (gameOver == false) {
+
+
+    //    let matchResult = undefined;
+//
+//
+//
+    //    if (playerWins == 5 || computerWins == 5) {
+//
+    //        let winner; 
+//
+    //        if (playerWins == 5) {
+    //            let winner = "Human player";
+    //            console.log("The Game is Over. The " + winner + " wins the game!!" )
+    //            var gameOver = true;
+    //        } else if (computerWins == 5) {
+    //            let winner = "Computer"
+    //            console.log("The Game is Over. The " + winner + " wins the game!!" )
+    //            var gameOver = true;
+//
+    //        }
+    //    }
+    //}
+}
+
+startButton = document.getElementById('startgame');
+
+console.log(startButton);
+
+
+startButton.addEventListener('click', beginGame = () => 
+    game()
+    );
 
 
