@@ -200,9 +200,6 @@ function game() {
     
 }
 
-
-
-
 startButton = document.getElementById('startgame');
 
 
