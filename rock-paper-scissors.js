@@ -124,6 +124,23 @@ function createScoreBoard(){
 
 }
 
+function gameOverPrompt(inputWinner){
+
+    let gameOverContainer = document.createElement('div');
+    document.body.appendChild(gameOverContainer);
+
+    let gameOverAnnouncement = document.createElement('p');
+    gameOverAnnouncement.innerText = "The game of Rock, Paper, Scissors is Over!";
+
+    let winnerDeclaration = document.createElement('p');
+    winnerDeclaration.innerText = `The Winner is ${inputWinner}`;
+
+    gameOverContainer.appendChild(gameOverAnnouncement);
+    gameOverContainer.appendChild(winnerDeclaration);
+
+
+}
+
 function game() {
 
     createScoreBoard();
@@ -140,6 +157,8 @@ function game() {
     let compScore = compCounter.innerText;
     let playerScore = playerCounter.innerText;
 
+
+
     
     rockBtn.addEventListener('click', rockSelection = () => {
 
@@ -153,6 +172,34 @@ function game() {
             } else if (roundResult == 'tie'){
                 console.log("it's a tie");
             }
+
+
+            let pulledScorePlayer = document.getElementById('player-counter');
+            let pulledScoreComp = document.getElementById('comp-counter');
+
+            let updatedPlayerScore = pulledScorePlayer.innerText;
+            let updatedCompScore = pulledScoreComp.innerText;
+
+
+            if (updatedPlayerScore == 5 || updatedCompScore == 5) {
+
+                if (updatedPlayerScore == 5) {
+                    let winner = "Human player";
+                    console.log("The Game is Over. The " + winner + " wins the game!!" )
+
+                    gameOverPrompt(winner);
+
+                } else if (updatedCompScore == 5) {
+                    let winner = "Computer"
+                    console.log("The Game is Over. The " + winner + " wins the game!!" )
+
+
+                    gameOverPrompt(winner);
+                }
+            }
+
+
+
             
         });
 
@@ -167,6 +214,36 @@ function game() {
             } else if (roundResult == 'tie'){
                 console.log("it's a tie");
             }
+
+
+            let pulledScorePlayer = document.getElementById('player-counter');
+            let pulledScoreComp = document.getElementById('comp-counter');
+
+            let updatedPlayerScore = pulledScorePlayer.innerText;
+            let updatedCompScore = pulledScoreComp.innerText;
+
+
+            if (updatedPlayerScore == 5 || updatedCompScore == 5) {
+
+                if (updatedPlayerScore == 5) {
+                    let winner = "Human player";
+                    console.log("The Game is Over. The " + winner + " wins the game!!" )
+
+                    gameOverPrompt(winner);
+
+                } else if (updatedCompScore == 5) {
+                    let winner = "Computer"
+                    console.log("The Game is Over. The " + winner + " wins the game!!" )
+
+
+                    gameOverPrompt(winner);
+                }
+            }
+
+
+
+
+
         });
 
     scissorsBtn.addEventListener('click', scissorsSelection = () => {
@@ -179,24 +256,35 @@ function game() {
             } else if (roundResult == 'tie'){
                 console.log("it's a tie");
             }
+
+
+            let pulledScorePlayer = document.getElementById('player-counter');
+            let pulledScoreComp = document.getElementById('comp-counter');
+
+            let updatedPlayerScore = pulledScorePlayer.innerText;
+            let updatedCompScore = pulledScoreComp.innerText;
+
+
+            if (updatedPlayerScore == 5 || updatedCompScore == 5) {
+
+                if (updatedPlayerScore == 5) {
+                    let winner = "Human player";
+                    console.log("The Game is Over. The " + winner + " wins the game!!" )
+
+                    gameOverPrompt(winner);
+
+                } else if (updatedCompScore == 5) {
+                    let winner = "Computer"
+                    console.log("The Game is Over. The " + winner + " wins the game!!" )
+
+
+                    gameOverPrompt(winner);
+                }
+            }
+
+
         });
 
-
-   // if (playerWins == 5 || computerWins == 5) {
-//
-   //     let winner; 
-//
-   //     if (playerWins == 5) {
-   //         let winner = "Human player";
-   //         console.log("The Game is Over. The " + winner + " wins the game!!" )
-   //         var gameOver = true;
-   //     } else if (computerWins == 5) {
-   //         let winner = "Computer"
-   //         console.log("The Game is Over. The " + winner + " wins the game!!" )
-   //         var gameOver = true;
-//
-   //     }
-   // }
     
 }
 
